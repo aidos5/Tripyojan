@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tripyojan: Explore underrated spots around your route!</title>
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="description"
+    content="Explore hidden gems & must-see spots. Plan your dream trip with our easy-to-use trip planner."
+  />
+  <meta
+    name="keywords"
+    content="trip planner, trip plan, trip, plan, tour guide, travel planner, travel app, trip planner app, travel planner app"
+  />
+  <meta name="author" content="tripyojan.com" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+  <!-- 
+    This viewport works for phones with notches.
+    It's optimized for gestures by disabling global zoom.
+    -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.00001, viewport-fit=cover"
+  />
+
+  <link rel="stylesheet" href="./realLandingPage/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./realLandingPage/css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="./realLandingPage/css/animate.css">
+
+  <!-- <link rel="stylesheet" href="./realLandingPage/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="./realLandingPage/css/owl.theme.default.min.css"> -->
+
+  <link rel="stylesheet" href="./realLandingPage/css/icomoon.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.min.css"> -->
+  <link rel="stylesheet" href="./realLandingPage/css/style.css">
+  <!-- <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/> -->
+</head>
+
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+
+  <!-- warning toast -->
+  <div id="snackbar"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./realLandingPage/images/logo.png" class="icon">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#section-features" class="nav-link">Features</a></li>
+            <!-- <li class="nav-item"><a href="#section-services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="#section-pricing" class="nav-link">Pricing</a></li> -->
+          <li class="nav-item"><a href="#section-about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#section-contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+  <section class="ftco-cover ftco-slant" style="background-image: url(./realLandingPage/images/bg_3.webp);" id="section-home">
+    <!-- <video autoplay muted loop id="myVideo">
+      <source src="background.mp4" type="video/mp4">
+    </video> -->
+    <div class="container">
+      <div class="row align-items-center justify-content-center text-center ftco-vh-100">
+        <div class="col-md-10">
+          <!-- <div class="container"> -->
+            <!-- <h1 class="ftco-heading ftco-animate text"></h1> -->
+          <!-- </div> -->
+          <h1 class="ftco-heading ftco-animate">Travel far, travel wide, and let <a href="#">tripyojan</a> be your guide.</h1>
+          <br>
+          <!-- <form  class="flex-form ftco-animate" autocomplete="off">
+            <input type="search" id="myInput" placeholder="Where do you want to go?">
+            <div class="autocomplete">
+            </div>
+            <input type="submit" value="Let's Go!">
+          </form> -->
+          <form autocomplete="off">
+            <div class="autocomplete">
+              <input id="myInput" type="text" placeholder="Where do you want to go?" class="nice shadow ftco-animate"/>
+            </div>
+            <a class="btn btn-primary ftco-animate shadow submit-btn" href="./map" onclick="return gotoPlanningPage()"><font color="white">Let's Go!</font></a>
+            <br>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-slant ftco-slant-white" id="section-counter">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-12 text-center ftco-animate">
+          <h2 class="text-uppercase ftco-uppercase">Fun Facts</h2>
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <p class="lead"><a href="#">Tripyojan</a> currently works in Bharat, USA and Canada. Europe is coming soon :)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END row -->
+      <div class="row">
+        <div class="col-md ftco-animate">
+          <div class="ftco-counter text-center">
+            <span class="ftco-number" data-number="64342">0</span>
+            <span class="ftco-label">Places to explore</span>
+          </div>
+        </div>
+        <div class="col-md ftco-animate">
+          <div class="ftco-counter text-center">
+            <span class="ftco-number" data-number="3">0</span>
+            <span class="ftco-label">Countries</span>
+          </div>
+        </div>
+        <div class="col-md ftco-animate">
+          <div class="ftco-counter text-center">
+            <span class="ftco-number" data-number="1003">0</span>
+            <span class="ftco-label">Hours Saved</span>
+          </div>
+        </div>    
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="ftco-section bg-light  ftco-slant">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center mb-5 ftco-animate">
+          <h1 class="text-uppercase ftco-uppercase">Your Ultimate Road Trip Planner</h1>
+          <br>
+          <div class="row justify-content-center">
+            <!-- <div class="col-md-7">
+                <p class="lead">Explore the world one road at a time.<br>Plan your trips with
+                  the best trip planner.</p>
+              </div> -->
+            <div class="iframe-container">
+              <iframe class="video" src="https://www.youtube-nocookie.com/embed/GOdm-M_bnKU?si=nAdAwuJ_BAAvYm4_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <!-- <p class="lead">
+              You're gearing up for a well-deserved vacation, and you've chosen a fantastic destination to explore.</br>
+              As you eagerly plan your itinerary, you realize that you want more than just the usual tourist
+              hotspots.</br> <b class="font-weight-bold">You crave the thrill of discovering hidden gems and underrated
+                treasures that often go unnoticed.</b>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-slant" id="section-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center ftco-animate">
+          <h1 class="text-uppercase ftco-uppercase">Discover Your Ultimate Road Trip Companion</h1>
+          <div class="row justify-content-center">
+            <p class="lead">Embark on a journey of exploration with our innovative road trip planner. We're dedicated to enhancing your travel experience by providing a seamless platform designed for adventurers like you.
+              </br>Revolutionize the way you plan your trips with our intuitive interface.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section bg-light  ftco-slant ftco-slant-white" id="section-features">
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-12 text-center mb-5 ftco-animate">
+          <h2 class="text-uppercase ftco-uppercase">Our Awesome Features</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-7">
+              <p class="lead">Discover awesome features of our trip planner app!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
+            <div class="ftco-icon mb-3"><span class="oi oi-thumb-up display-4 text-muted"></span></div>
+            <div class="media-body">
+              <h5 class="mt-0">Planning made easy</h5>
+              <p class="mb-5">Planning made easy, where our intuitive tools and features make the process of organizing your trip effortless and convenient.</p>
+              <!-- <p class="mb-0"><a href="#section-home" class="btn btn-primary btn-sm">Learn More</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
+            <div class="ftco-icon mb-3"><span class="oi oi-bolt display-4 text-muted"></span></div>
+            <div class="media-body">
+              <h5 class="mt-0">Hidden Gems</h5>
+              <p class="mb-5">Discover hidden gems and local favorites at your travel destination, curated by fellow travelers. Never miss a great spot</p>
+              <!-- <p class="mb-0"><a href="#section-home" class="btn btn-primary btn-sm">Learn More</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="media d-block mb-4 text-center ftco-media p-md-5 p-4 ftco-animate">
+            <div class="ftco-icon mb-3"><span class="oi oi-person display-4 text-muted"></span></div>
+            <!-- <div class="media-body"> -->
+              <h5 class="mt-0">User Friendly</h5>
+              <p class="mb-5">Experience the benefit of a user-friendly interface that ensures intuitive navigation and effortless interaction.</p>
+              <!-- <p class="mb-0"><a href="#section-home" class="btn btn-primary btn-sm">Learn More</a></p> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-slant ftco-slant-light" id="section-about">
+    <div class="container">
+
+      <div class="row mb-5">
+        <div class="col-md-12 text-center ftco-animate">
+          <h2 class="text-uppercase ftco-uppercase">About Us</h2>
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <p class="lead">At <a href="https://tripyojan.com">tripyojan.com</a>, we're on a mission to simplify travel planning. Our app is designed to take the stress out of organizing your trips. With intuitive features and user-friendly tools, we're here to make your travel experiences seamless and unforgettable. Explore, plan, and embark on your next adventure with confidence – <a href="https://tripyojan.com">tripyojan.com</a> has your back.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section ftco-slant ftco-slant-light  bg-light ftco-slant ftco-slant-white" id="section-faq">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12 text-center ftco-animate">
+            <h2 class="text-uppercase ftco-uppercase">FAQ</h2>
+            <div class="row justify-content-center mb-5">
+              <div class="col-md-7">
+                <p class="lead">We get asked this questions very frequently</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END row -->
+        <div class="row">
+          <div class="col-md-6 mb-5 ftco-animate">
+            <h3 class="h5 mb-4">Why use tripyojan?</h3>
+            <p>Tripyojan is your go-to destination for effortless road trip planning. Our platform revolutionizes the way you explore the world, offering a seamless experience from start to finish.</p>
+            <p class="mb-5"><a href="#">Learn More</a></p>
+          </div>
+          <div class="col-md-6 mb-5 ftco-animate">
+            <h3 class="h5 mb-4">Can I change my trip itinerary after it's been created?</h3>
+            <p>Yes, you can easily modify your trip itinerary at any time. Simply log in to your Tripyojan account, navigate to previous trips page, and select the trip you wish to edit. From there, you can add or remove destinations, update dates, and make any other necessary changes to customize your journey to perfection.</p>
+            <p class="mb-5"><a onclick="return gotoTripHistory()" href="./trip-history">Goto Previous trips</a></p>
+          </div>
+          <div class="col-md-6 mb-5 ftco-animate">
+            <h3 class="h5 mb-4">Can I share my trip with my friends?</h3>
+            <p>Ofcourse! Just plan your dream trip then hit take trip button, on the follow up page you'll get a sharable link which your friends can use to see your marvellous trip</p>
+            <p class="mb-5"><a href="#">Plan my trip</a></p>
+          </div>
+          <div class="col-md-6 mb-5 ftco-animate">
+            <h3 class="h5 mb-4">If I need support who do I contact?</h3>
+            <p>For support inquiries, please reach out to our dedicated customer support team. You can contact us via email at <a href="mailto:support@tripyojan.com">support@tripyojan.com</a> or through our online support portal on the Tripyojan website. Our team is committed to assisting you promptly and ensuring that your road trip planning experience is smooth and enjoyable.</p>
+            <p class="mb-5"><a onclick="return gotoContactUs()" href="./contact-us">Goto contact</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="ftco-section ftco-slant ftco-slant-dark" id="section-contact">
+    <div class="container">
+
+      <div class="row mb-5">
+        <div class="col-md-12 text-center ftco-animate">
+          <h2 class="text-uppercase ftco-uppercase">Contact Us</h2>
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7">
+              <p class="lead">If you have any questions or need assistance, please don't hesitate to write to us here : <a href="mailto:support@tripyojan.com">support@tripyojan.com</a> via email.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="ftco-footer ftco-bg-dark">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Company</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#section-about" class="py-2 d-block">About</a></li>
+                  <li><a onclick="return gotoPrivacyPolicy()" href="./privacy-policy" class="py-2 d-block">Privacy Policy</a></li>
+                  <li><a onclick="return gotoTermsOfService()" href="./terms-of-service" class="py-2 d-block">Terms Of Service</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md">
+              <div class="ftco-footer-widget mb-4">
+                <h2 class="ftco-heading-2">Useful Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#section-contact" class="py-2 d-block">Support</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ftco-footer-widget mb-4">
+            <ul class="ftco-footer-social list-unstyled float-md-right float-lft">
+              <li><a href="https://twitter.com/tripyojan"><span class="icon-twitter"></span></a></li>
+              <!-- <li><a href="#"><span class="icon-facebook"></span></a></li> -->
+              <li><a href="https://www.instagram.com/tripyojan/"><span class="icon-instagram"></span></a></li>
+              <li><a href="https://www.youtube.com/@tripyojan"><span class="icon-youtube"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md text-left">
+          <p>&copy; tripyojan.com 2024. All Rights Reserved. Made with <span class="icon-heart text-danger"></span> by <a
+              href="">tripyojan.com</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#4586ff" />
+    </svg></div>
+
+
+  <script src="./realLandingPage/js/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+  <script src="./realLandingPage/js/jquery.animateNumber.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery.animate-number@0.0.14/jquery.animateNumber.min.js"></script> -->
+  <script src="./realLandingPage/js/popper.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="./realLandingPage/js/bootstrap.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="./realLandingPage/js/jquery.easing.1.3.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="./realLandingPage/js/jquery.waypoints.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="./realLandingPage/js/main.js"></script>
+  <script src="./realLandingPage/script.js"></script>
+
+
+</body>
+
+</html>

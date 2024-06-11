@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Explore underrated spots around your route!"
+    />
+    <meta
+      name="keywords"
+      content="trip planner, trip plan, trip, plan, tour guide, travel planner, travel app, trip planner app, travel planner app"
+    />
+    <meta name="author" content="tripyojan.com" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+    <!-- 
+      This viewport works for phones with notches.
+      It's optimized for gestures by disabling global zoom.
+     -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.00001, viewport-fit=cover"
+    />
+    <title>Tripyojan: Plan your trip with this easy to use trip planner!</title>
+    <style>
+      /**
+       * Extend the react-native-web reset:
+       * https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js
+       */
+      html,
+      body,
+      #root {
+        width: 100%;
+        /* To smooth any scrolling behavior */
+        -webkit-overflow-scrolling: touch;
+        margin: 0px;
+        padding: 0px;
+        /* Allows content to fill the viewport and go beyond the bottom */
+        min-height: 100%;
+      }
+
+      #root {
+        flex-shrink: 0;
+        flex-basis: auto;
+        flex-grow: 1;
+        display: flex;
+        /* flex: 1; */
+        /* justify-content: center;
+      align-items: center; */
+        /* flex-direction: column; */
+      }
+
+      html {
+        scroll-behavior: smooth;
+        /* Prevent text size change on orientation change https://gist.github.com/tfausak/2222823#file-ios-8-web-app-html-L138 */
+        -webkit-text-size-adjust: 100%;
+        height: calc(100% + env(safe-area-inset-top));
+      }
+
+      body {
+        display: flex;
+        /* Allows you to scroll below the viewport; default value is visible */
+        overflow-y: auto;
+        overscroll-behavior-y: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -ms-overflow-style: scrollbar;
+      }
+
+      #ftco-loader {
+        position: fixed;
+        width: 96px;
+        height: 96px;
+        left: calc(50% - 20px);
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 24px 64px rgba(0, 0, 0, 0.24); */
+        /* border-radius: 16px; */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease-out, visibility 0s linear 0.2s;
+        z-index: 1000;
+        /* scale: 0.6; */
+      }
+      #ftco-loader.show {
+        transition: opacity 0.4s ease-out, visibility 0s linear 0s;
+        visibility: visible;
+        opacity: 1;
+      }
+      #ftco-loader .circular {
+        animation: loader-rotate 2s linear infinite;
+        position: absolute;
+        left: calc(50% - 24px);
+        top: calc(50% - 24px);
+        display: block;
+        transform: rotate(0deg);
+      }
+      #ftco-loader .path {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        animation: loader-dash 1.5s ease-in-out infinite;
+        stroke-linecap: round;
+      }
+      @keyframes loader-rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes loader-dash {
+        0% {
+          stroke-dasharray: 1, 200;
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -35px;
+        }
+        100% {
+          stroke-dasharray: 89, 200;
+          stroke-dashoffset: -136px;
+        }
+      }
+      .loader {
+        /* align-self: center;
+        justify-self: center; */
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border: 5px solid #f3f3f3;
+        border-bottom-color: #3498db;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .circular-progress {
+        position: absolute;
+        left: calc(50% - 37.5px);
+        top: calc(50% - 37.5px);
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3498db;
+      }
+      .inner-circle {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .percentage {
+        position: relative;
+        font-size: 1.2rem;
+        color: gray;
+      }
+    </style>
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- 
+      A generic no script element with a reload button and a message.
+      Feel free to customize this however you'd like.
+    -->
+    <noscript>
+      <form
+        action=""
+        style="
+          background-color: #fff;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+        "
+      >
+        <div
+          style="
+            font-size: 18px;
+            font-family: Helvetica, sans-serif;
+            line-height: 24px;
+            margin: 10%;
+            width: 80%;
+          "
+        >
+          <p>Oh no! It looks like JavaScript is not enabled in your browser.</p>
+          <p style="margin: 20px 0">
+            <button
+              type="submit"
+              style="
+                background-color: #4630eb;
+                border-radius: 100px;
+                border: none;
+                box-shadow: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+                line-height: 20px;
+                padding: 6px 16px;
+              "
+            >
+              Reload
+            </button>
+          </p>
+        </div>
+      </form>
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root">
+      <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+            stroke="#4586ff" />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
