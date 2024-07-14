@@ -14,11 +14,28 @@ test('home button click', async ({page}) => {
   await expect(homeSection).toHaveText(/Travel no where, travel wide, and let tripyojan be your/)
 
 })
+
 test('features button click', async ({page}) => {
   await page.goto('https://tripyojan.pages.dev/')
-  await page.click("text=Home")
-  const homeSection = await page.locator('#section-home')
-  await expect(homeSection).toHaveText(/Travel no where, travel wide, and let tripyojan be your/)
+  await page.click("text=Features")
+  const homeSection = await page.locator('#section-features')
+  await expect(homeSection).toHaveText(/Our Awesome Features/)
+
+})
+
+test('about button click', async ({page}) => {
+  await page.goto('https://tripyojan.pages.dev/')
+  await page.click("text=About")
+  const homeSection = await page.locator('#section-about')
+  await expect(homeSection).toHaveText(/About Us/)
+
+})
+
+test('contact button click', async ({page}) => {
+  await page.goto('https://tripyojan.pages.dev/')
+  await page.click("text=Let's Contact")
+  const homeSection = await page.locator('#section-contact')
+  await expect(homeSection).toHaveText(/Contact Us/)
 
 })
 
