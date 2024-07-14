@@ -10,32 +10,30 @@ test('goto html page', async ({page}) => {
 test('home button click', async ({page}) => {
   await page.goto('https://tripyojan.pages.dev/')
   await page.click("text=Home")
-  const homeSection = await page.locator('#section-home')
-  await expect(homeSection).toContainText(/Travel no where, travel wide, and let tripyojan be your/)
-
+  // const homeSection = await page.locator('#section-home') 
+  await expect(page).toHaveURL(/.*\/#section-home/);
 })
 
 test('features button click', async ({page}) => {
   await page.goto('https://tripyojan.pages.dev/')
   await page.click("text=Features")
-  const featureSection = await page.locator('#section-features')
-  await expect(featureSection).toContainText(/Our Awesome Features/)
+  // const featureSection = await page.locator('#section-features')
+  await expect(page).toHaveURL(/.*\/#section-features/);
 
 })
 
 test('about button click', async ({page}) => {
   await page.goto('https://tripyojan.pages.dev/')
   await page.click("text=About")
-  const aboutSection = await page.locator('#section-about')
-  await expect(aboutSection).toContainText(/About Us/)
-
+  // const aboutSection = await page.locator('#section-about')
+  await expect(page).toHaveURL(/.*\/#section-about/);
 })
 
 test('contact button click', async ({page}) => {
   await page.goto('https://tripyojan.pages.dev/')
   await page.click("text=Let's Contact")
-  const contactSection = await page.locator('#section-contact')
-  await expect(contactSection).toContainText(/Contact Us/)
+  // const contactSection = await page.locator('#section-contact')
+  await expect(page).toHaveURL(/.*\/#section-contact/);
 
 })
 
